@@ -1,0 +1,15 @@
+# docker-compose.spark.yml
+services:
+  spark-run:
+    build:
+      context: .
+      dockerfile: Dockerfile.spark
+    image: pharma-budget-impact-pipeline-spark-run:latest  # nombre estable
+    env_file:
+      - .env.docker
+    environment:
+      - PYTHONPATH=/app
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: ["python","-m","spark.build_country_year_spark"]

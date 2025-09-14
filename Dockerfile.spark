@@ -1,0 +1,27 @@
+# Dockerfile.spark
+# Imagen base Python + Java 17 para PySpark 3.5
+FROM python:3.10-slim-bookworm
+
+# Java para PySpark (Spark 3.5.x es compatible con Java 17)
+# procps evita warnings de 'ps not found' que a veces muestra Spark
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    openjdk-17-jre-headless ca-certificates procps \
+  && rm -rf /var/lib/apt/lists/*
+
+# Entorno
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PYSPARK_PYTHON=python3
+ENV PYTHONUNBUFFERED=1
+ENV LANG=C.UTF-8
+ENV PYTHONPATH=/app
+
+WORKDIR /app
+
+# Mejoras de instalación de Python
+COPY requirements.txt .
+RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel \
+ && pip install --no-cache-dir -r requirements.txt
+
+# Código se monta por volumen (compose). Comando por defecto:
+CMD ["python", "-m", "spark.build_country_year_spark"]
+CMD ["python", "-m", "spark.build_country_year_spark"]

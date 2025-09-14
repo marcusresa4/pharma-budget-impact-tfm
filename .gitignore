@@ -1,0 +1,53 @@
+# Ignorados del proyecto (entornos, artefactos generados y archivos temporales)
+# No versionar datos sensibles ni dumps locales.
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Caché/intermedios Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Datos generados (no versionar)
+data/
+warehouse/
+spark-warehouse/
+tmp/
+*_temporary/
+*_SUCCESS
+
+# Ficheros locales potencialmente sensibles
+*.sqlite
+*.db
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.json
+*.zip
+
+# Config local
+.env
+.env.docker
+.envrc
+
+# IDE
+.vscode/
+.idea/
+.idea/

@@ -1,0 +1,11 @@
+# Librerías principales de manipulación y utilidades
+pandas==2.2.2
+python-dotenv==1.0.1
+requests==2.32.3
+
+# Acceso a PostgreSQL (ORM + driver)
+SQLAlchemy==2.0.32
+psycopg2-binary==2.9.9
+
+# Entorno Spark local (compatible Spark 3.5.x / Java 17)
+pyspark==3.5.1

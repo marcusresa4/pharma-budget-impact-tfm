@@ -1,0 +1,41 @@
+# Entornos locales
+.venv/
+venv/
+env/
+ENV/
+
+# Caché Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Datos producidos (no copiar a imagen)
+data/
+warehouse/
+spark-warehouse/
+tmp/
+*_temporary/
+*_SUCCESS
+
+# Logs
+*.log
+logs/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Variables y secretos locales
+.env
+.env.docker
+.envrc
+
+# Configuración de editores
+.vscode/
+.idea/
+
+# Comprimidos
+*.zip
+*.tar
+*.gz
